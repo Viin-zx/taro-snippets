@@ -1,0 +1,39 @@
+{
+  "import": {
+    "prefix": "imp",
+    "body": ["import ${2:moduleName} from '${1:module}'$0"]
+  },
+  "importDestructing": {
+    "prefix": "imd",
+    "body": ["import { $2 } from '${1:module}'$0"]
+  },
+  "taroFunctionalComponentMemo": {
+    "prefix": "tfcm",
+    "body": [
+      "import Taro, { memo } from '@tarojs/taro'",
+      "import { View } from '@tarojs/components'",
+      "",
+      "function ${1:${TM_FILENAME_BASE}}() {",
+      "\treturn (<View>",
+      "\t</View>)",
+      "}",
+      "",
+      "export default memo(${1:${TM_FILENAME_BASE}})"
+    ]
+  },
+  "taroFunctionalComponentMobx": {
+    "prefix": "tfcm",
+    "body": [
+      "import Taro from '@tarojs/taro'",
+      "import { View } from '@tarojs/components'",
+      "import { observer } from '@tarojs/mobx'",
+      "",
+      "function ${1:${TM_FILENAME_BASE}}() {",
+      "\treturn (<View>",
+      "\t</View>)",
+      "}",
+      "",
+      "export default observer(${1:${TM_FILENAME_BASE}})"
+    ]
+  }
+}
